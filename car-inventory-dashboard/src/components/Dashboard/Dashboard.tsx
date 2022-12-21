@@ -20,78 +20,78 @@ import { Drawer as MUIDrawer,
 import MenuIcon from '@mui/icons-material/Menu';
 import { ChevronRight, ChevronLeft } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-// import { theme } from '../../Theme/themes';
+import { theme } from '../../Theme/themes';
 import { DataTable } from '../DataTable'
 import {CarForm} from '../CarForm';
 
 const drawerWidth = 240;
 
-// const myStyles = {
-//     appBar: {
-//         transition: theme.transitions.create(['margin', 'width'], {
-//             easing: theme.transitions.easing.sharp,
-//             duration: theme.transitions.duration.leavingScreen,
-//         })
-//     },
-//     appBarShift: {
-//         width: `calc(100% - ${drawerWidth}px)`,
-//         marginLeft: drawerWidth,
-//         transition: theme.transitions.create(['margin', 'width'], {
-//             easing: theme.transitions.easing.easeOut,
-//             duration: theme.transitions.duration.enteringScreen,
-//         })
-//     },
-//     menuButton: {
-//         marginRight: theme.spacing(2),
-//     },
-//     hide: {
-//         display: 'none',
-//     },
-//     drawer: {
-//         width: drawerWidth,
-//         flexShrink: 0,
-//     },
-//     drawerPaper: {
-//         width: drawerWidth,
-//     },
-//     drawerHeader: {
-//         width: drawerWidth,
-//         display: 'flex',
-//         alignItems: 'center',
-//         padding: theme.spacing(0,1),
-//         ...theme.mixins.toolbar,
-//         justifyContent: 'flex-end',
-//     },
-//     content: {
-//         flexGrow: 1,
-//         padding: theme.spacing(3),
-//         marginLeft: 0,
-//         transition: theme.transitions.create('margin', {
-//             easing: theme.transitions.easing.sharp,
-//             duration: theme.transitions.duration.leavingScreen,
-//         })
-//     },
-//     contentShift: {
-//         marginLeft: 0,
-//         translation: theme.transitions.create('margin', {
-//             easing: theme.transitions.easing.easeOut,
-//             duration: theme.transitions.duration.enteringScreen,
-//         })
-//     },
-//     toolbar: {
-//         display: 'flex',
-//         backgroundColor: theme.palette.error.main,
-//     },
-//     toolbarButton: {
-//         marginLeft: 'auto',
-//         color: theme.palette.error.light,
-//         backgroundColor: theme.palette.error.contrastText,
-//         "&:hover": {
-//             backgroundColor: theme.palette.error.contrastText,
-//             color: theme.palette.error.dark
-//         }
-//     },
-// }
+const myStyles = {
+    appBar: {
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        })
+    },
+    appBarShift: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+        })
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    hide: {
+        display: 'none',
+    },
+    drawer: {
+        width: drawerWidth,
+        flexShrink: 0,
+    },
+    drawerPaper: {
+        width: drawerWidth,
+    },
+    drawerHeader: {
+        width: drawerWidth,
+        display: 'flex',
+        alignItems: 'center',
+        padding: theme.spacing(0,1),
+        ...theme.mixins.toolbar,
+        justifyContent: 'flex-end',
+    },
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+        marginLeft: 0,
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        })
+    },
+    contentShift: {
+        marginLeft: 0,
+        translation: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+        })
+    },
+    toolbar: {
+        display: 'flex',
+        backgroundColor: theme.palette.error.main,
+    },
+    toolbarButton: {
+        marginLeft: 'auto',
+        color: theme.palette.error.light,
+        backgroundColor: theme.palette.error.contrastText,
+        "&:hover": {
+            backgroundColor: theme.palette.error.contrastText,
+            color: theme.palette.error.dark
+        }
+    },
+}
 
 export const Dashboard = () => {
     const navigate = useNavigate();
@@ -135,17 +135,17 @@ export const Dashboard = () => {
         <Box sx = {{display: 'flex'}}>
             <CssBaseline />
             <AppBar
-                // sx = {open ? myStyles.appBarShift : myStyles.appBar }
+                sx = {open ? myStyles.appBarShift : myStyles.appBar }
                 position = 'fixed'
             >
-                {/* <Toolbar sx = {myStyles.toolbar}>
+                <Toolbar sx = {myStyles.toolbar}>
 
                     <IconButton
                         color = 'inherit'
                         aria-label= 'open-drawer'
                         onClick = {handleDrawerOpen}
                         edge = 'start'
-                        // sx = {open ? myStyles.hide : myStyles.menuButton}
+                        sx = {open ? myStyles.hide : myStyles.menuButton}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -157,14 +157,14 @@ export const Dashboard = () => {
                         <DialogTitle id='form-dialog-title'>Add New Car</DialogTitle>
                         <DialogContent>
                             <DialogContentText>Add New Car</DialogContentText>
-                            <CarForm/>
+                            {/* <CarForm/> */}
                         </DialogContent>
                     
                         <DialogActions>
                             <Button onClick={handleDialogClose} color="error">Cancel</Button>
                         </DialogActions>
                     </Dialog>
-                </Toolbar> */}
+                </Toolbar>
             </AppBar>
 
             <MUIDrawer

@@ -3,7 +3,6 @@ import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 import pug_in_a_blanket from "../../assets/images/pug_in_a_blanket.jpg";
 import { Link } from "react-router-dom";
-import { SignUsOut } from "../SignIn/SignIn";
 
 interface Props {
   title: string;
