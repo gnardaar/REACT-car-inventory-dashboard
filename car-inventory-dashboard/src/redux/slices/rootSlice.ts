@@ -6,7 +6,6 @@ const rootSlice = createSlice({
         make: '',
         model: '',
         year: '',
-        weight: '',
         condition:''
     },
     reducers: {

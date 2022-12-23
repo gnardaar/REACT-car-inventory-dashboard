@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 import { chooseMake,chooseModel,chooseYear,chooseCondition } from '../../redux/slices/rootSlice';
 import { Input } from "../sharedComponents/Input";
 import { server_calls } from '../../api';
-import { useGetData } from '../../custom-hooks';
+import { useGetData } from '../../custom-hooks/FetchData';
 
 // add custom hooks and match the models.py in the flask inventory app
 
@@ -24,7 +24,7 @@ interface CarState {
 
 export const CarForm = (props: CarFormProps) => {
   const dispatch = useDispatch();
-  // let { carData, getData } = useGetData();
+  let { carData, getData } = useGetData();
   const store = useStore();
   const { register, handleSubmit } = useForm({});
 
@@ -73,7 +73,7 @@ export const CarForm = (props: CarFormProps) => {
             />
           </div>
           <div>
-            <label htmlFor="condition">Weight</label>
+            <label htmlFor="condition">Condition</label>
             <Input
               {...register("condition")}
               name="condition"

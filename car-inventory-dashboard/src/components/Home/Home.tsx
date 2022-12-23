@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
 import { Button } from "@mui/material";
-import pug_in_a_blanket from "../../assets/images/pug_in_a_blanket.jpg";
+// import pug_in_a_blanket from "../../assets/images/pug_in_a_blanket.jpg";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -59,7 +59,7 @@ const NavA = styled(Link)({
 });
 
 const Main = styled("main")({
-  backgroundImage: `url(${pug_in_a_blanket})`,
+  // backgroundImage: `url(${pug_in_a_blanket})`,
   width: "100%",
   height: "100%",
   backgroundSize: "cover",
@@ -80,7 +80,7 @@ const MainText = styled("div")({
 export const Home = (props: Props) => {
   let MyAuth = localStorage.getItem("myAuth");
 
-  if (MyAuth == "true") {
+  if (MyAuth === "true") {
     return (
       <Root>
         <NavbarContainer>

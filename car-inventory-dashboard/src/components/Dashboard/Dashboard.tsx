@@ -157,7 +157,7 @@ export const Dashboard = () => {
                         <DialogTitle id='form-dialog-title'>Add New Car</DialogTitle>
                         <DialogContent>
                             <DialogContentText>Add New Car</DialogContentText>
-                            {/* <CarForm/> */}
+                            <CarForm/>
                         </DialogContent>
                     
                         <DialogActions>
@@ -168,17 +168,17 @@ export const Dashboard = () => {
             </AppBar>
 
             <MUIDrawer
-                // sx = {open ? myStyles.drawer : myStyles.hide}
+                sx = {open ? myStyles.drawer : myStyles.hide}
                 variant = 'persistent'
                 anchor = 'left'
                 open = {open}
                 style = {{width:drawerWidth}}
             >
-                {/* <Box sx = {myStyles.drawerHeader}>
+                <Box sx = {myStyles.drawerHeader}>
                     <IconButton onClick = {handleDrawerClose}>
                         {theme.direction === 'ltr' ? <ChevronLeft/> : <ChevronRight/>}
                     </IconButton>
-                </Box> */}
+                </Box>
 
                 <Divider />
 
@@ -194,11 +194,11 @@ export const Dashboard = () => {
                 </List>
 
             </MUIDrawer>
-{/* 
+
             <Box sx = {myStyles.content}>
                 <Box sx = {myStyles.drawerHeader} />
                 <DataTable />
-            </Box> */}
+            </Box>
         </Box>
     )
 }

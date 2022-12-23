@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-// import firebase from 'firebase/app';
+import firebase from 'firebase/app';
 // import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-// import {
-//     getAuth,
-//     GoogleAuthProvider,
-//     onAuthStateChanged,
-//     signOut,
-//     createUserWithEmailAndPassword,
-//     signInWithEmailAndPassword,
-// } from 'firebase/auth';
+import {
+    getAuth,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    signOut,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+} from 'firebase/auth';
 import {
     Container,
     Button,
@@ -102,7 +102,7 @@ const Alert = (props:AlertProps) => {
 const GoogleButton = (props:buttonProps) => {
     const navigate = useNavigate();
     // const provider = new GoogleAuthProvider();
-    // const auth = getAuth()
+    const auth = getAuth()
     // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
     const signIn = async () => {
@@ -116,7 +116,7 @@ const GoogleButton = (props:buttonProps) => {
     // }
 
     let MyAuth = localStorage.getItem('myAuth')
-    if (MyAuth == 'true') {
+    if (MyAuth === 'true') {
         return (
             <Container maxWidth='sm' sx={signinStyles.containerStyle}>
                 <Typography sx={signinStyles.textStyle}>
@@ -137,7 +137,7 @@ export const SignIn = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm({});
-    // const auth = getAuth();
+    const auth = getAuth();
 
     const handleSnackOpen = () => {
         setOpen(true);
@@ -151,19 +151,19 @@ export const SignIn = () => {
     const onSubmit = async (data:any, event:any) => {
         console.log(data.email, data.password)
 
-        // signInWithEmailAndPassword(auth, data.email, data.password)
-        //     .then((userCredential) => {
-        //         localStorage.setItem('myAuth', 'true')
-        //         const user = userCredential.user
-        //         navigate('/dashboard')
-        //     })
-        //     .catch((error) => {
-        //         console.log(error.message);
-        //     })
+        signInWithEmailAndPassword(auth, data.email, data.password)
+            .then((userCredential) => {
+                localStorage.setItem('myAuth', 'true')
+                const user = userCredential.user
+                navigate('/dashboard')
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
     }
 
     let MyAuth = localStorage.getItem('myAuth')
-    if (MyAuth == 'true') {
+    if (MyAuth === 'true') {
         return (
             <Container maxWidth='sm' sx={signinStyles.containerStyle}>
                 <Typography sx={signinStyles.textStyle}>
